@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Developer Introduction</title>
+	<style>
+      /* Set the responsive layout */
+      @media screen and (max-width: 600px) {
+            .container {
+             height: auto;
+            padding: 10px;
+            }
+
+            .left {
+            flex: auto;
+            margin-right: 0;
+            margin-bottom: 20px;
+            }
+
+            h1 {
+             font-size: 30px;
+            }
+
+            p {
+            font-size: 16px;
+            margin-bottom: 5px;
+            }
+
+            .button {
+            padding: 8px 16px;
+            font-size: 16px;
+            }
+      }            
+            /* Set the normal layout --> */
+            /*Sets the background image, size, and position. It also defines the font family for the entire webpage.*/
+		body {
+			background-image: url('https://cdn.pixabay.com/photo/2023/04/24/03/16/camping-7947056_1280.jpg');
+			background-size: cover;
+			background-position: center;
+			font-family: Arial, sans-serif;
+		}
+            
+            /*Sets the display to flex and wraps the content within it. It centers the items vertically and horizontally. 
+            The container has a fixed height of 100vh (viewport height) and adds padding to its content.*/
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+            /*Styles the elements within the left section of the container. It sets the flex value to 1, which means it will take up all the available space. 
+            It also sets the text color to white and adds a margin on the right side.*/
+		.left {
+			flex: 1;
+			color: white;
+			margin-right: 20px;
+		}
+
+            /*Styles the main heading with a font size of 40px and a margin-bottom of 20px.*/
+		h1 {
+			font-size: 40px;
+			margin-bottom: 20px;
+		}
+
+            /*Styles the paragraphs with a font size of 18px and a margin-bottom of 10px.*/
+		p {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+            /*Styles the buttons with padding, border radius, margin, color, text decoration, font size, font weight, transition, and box shadow. 
+            The buttons have different background colors based on their classes.*/
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 20px;
+			margin-right: 10px;
+			color: white;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: bold;
+			transition: background-color 0.3s ease;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+		}
+
+		.button-about {
+			background-color: green;
+		}
+
+		.button-chat {
+			background-color: pink;
+		}
+
+            /*Adds a hover effect to the buttons by changing their background color and cursor.*/
+		.button:hover {
+			background-color: rgba(255, 255, 255, 0.2);
+			cursor: pointer;
+		}
+
+            /*Styles the footer with a transparent background, center-aligned text, padding, and white color.*/
+            footer{
+            background-color: transparent;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            }
+
+	</style>
+</head>
+<body>
+	<div class="container">
+            <!-- Show the information in this container -->
+		<div class="left">
+			<h1>Developer Introduction</h1>
+			<p>Name：Peibang Zheng</p>
+			<p>University：South China Normal University</p>
+                  <p>Major:Business Management and Information Systems</p>
+                  <p>Welcome to my page! </p>
+                  <p>I create a web to support communication</p>
+                  <p>You can click the following two buttons to see more about me and chat.</p>
+			<a href="About.html" class="button button-about">About</a>
+			<a href="index.html" class="button button-chat">Let's chat</a>
+		</div>
+		<div class="right"></div>
+	</div>
+      <!-- Give the right -->
+      <footer> 
+            <p>All right reserved © 2023 Peibang Zheng</p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+// Configure your Run and Preview buttons here.
+
+// Run button configuration
+  "commands": {
+        "Node version": "node --version"
+  },
+
+// Preview button configuration
+  "preview": {
+        "Project Index (static)": "https://{{domain}}/{{index}}",
+        "Current File (static)": "https://{{domain}}/{{filepath}}",
+        "Box URL": "https://{{domain3000}}/"
+  },
+  "debugger": [{"type":"NODEJS","command":"Mywork/Set/server.js","before":"","uuid":"0bf948ac-f56c-8b8b-c470-7862328efa81","name":"server.js"}]
+}

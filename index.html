@@ -1,0 +1,116 @@
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <script src="https://cdn.socket.io/4.6.1/socket.io.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Chat Application</title>
+      <link rel="stylesheet" href="Chat.css">
+      </head>
+      <body>
+      <!-- Give navigation in this page -->
+      <nav>
+            <ul>
+            <li><a href="Me.html">Introduction</a></li>
+            <li><a href="About.html">About</a></li>
+            </ul>
+      </nav>
+      <!-- Give place to the element -->
+      <div class = "side-panel">
+      <div id = "userList"></div>
+      <div id = "typingArea"></div>   
+      </div>   
+      <div class="container">
+      <h1>Welcome to Chat</h1>
+      <div class="chat-window">
+            <div id="messages"></div>
+            <input type="text" id="input-message" placeholder="Type your message">
+            <button id="send-button">Send</button>
+      </div>
+      </div>
+      
+      <footer> 
+            <p>All right reserved © 2023 Peibang Zheng</p>
+      </footer>
+      
+      <script>
+      // connet Socket.IO server
+      const socket = io();
+
+      // gain HTML element
+      const messageContainer = document.getElementById('messages');
+      const inputMessage = document.getElementById('input-message');
+      const sendButton = document.getElementById('send-button');
+      const userList = document.getElementById('userList');
+      const typingArea = document.getElementById("typingArea");
+
+      // send messgae
+      function sendMessage() {
+            const message = inputMessage.value;
+
+            // send message to the sever
+            socket.emit('chat message', message);
+
+            // clear the input
+            inputMessage.value = '';
+      }
+
+      // show information
+      function showMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageContainer.appendChild(messageElement);
+      }
+
+      // listen the message which send form the server
+      socket.on('chat message', (msg) => {
+            showMessage(msg);
+      });
+
+      socket.on('enter', (msg) => {
+            showMessage(msg);
+      });
+
+      socket.on('leave', (msg) => {
+            showMessage(msg);
+      });
+
+      // listen for send button click events
+      sendButton.addEventListener('click', () => {
+            sendMessage();
+      });
+
+      // Listen for the return key press event
+      inputMessage.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13) {
+            event.preventDefault();
+            sendMessage();
+            }
+      });
+
+      // confirm current users
+      socket.on('userList', function(users){
+            userList.innerHTML = 'Current chatting users:';
+            users.forEach(function(user){
+            let userDiv = document.createElement('div');
+            userDiv.innerHTML = user + ' ';
+            userList.appendChild(userDiv);
+            })
+      })
+
+      //confirm current users who is typing
+      inputMessage.addEventListener('input',function(){
+            socket.emit('typing');
+      });
+
+      
+      socket.on('typing', function(data){
+            typingArea.innerHTML = data;
+            setTimeout(function(){
+            typingArea.innerHTML = ' ';
+            }, 3000);
+      })
+
+      </script>
+      </body>
+      </html>

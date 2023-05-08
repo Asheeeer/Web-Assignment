@@ -1,0 +1,142 @@
+/* Adjusts the layout for smaller screens by modifying the container,
+side panel, and input field widths */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    margin: 100px auto;
+  }
+
+  .side-panel {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #input-message {
+    width: 60%;
+  }
+
+  #send-button {
+    width: 35%;
+  }
+}
+
+/* Sets the background image, size, and font family for the webpage. */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://cdn.pixabay.com/photo/2018/01/29/13/03/internet-3116062_1280.jpg');
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles the navigation bar with a background color and navigation links. */
+nav {
+  background-color: rgba(3, 32, 44, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+  transition: background-color 0.5s ease;
+  border-radius: 50%;
+}
+
+/* Styles the main content container with a maximum width, */
+/* background color, padding, and border radius. */
+.container {
+  max-width: 500px;
+  margin: 175px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Styles the main heading with text alignment and color. */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Styles the chat window with a fixed height, scrolling behavior, padding, and border. */
+.chat-window {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles the individual messages within the chat window. */
+#messages {
+  margin-bottom: 10px;
+}
+
+/* Styles the input message field with a width, padding, border radius, and border. */
+#input-message {
+  width: 80%;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Styles the send button with padding, background color,
+text color, border radius, and hover effect. */
+#send-button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #555;
+}
+
+/* Styles the side panel with a fixed position,
+background color, padding, and border radius. */
+.side-panel {
+  position: fixed;
+  top: 60px; 
+  left: 20px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1; /* Make sure the navigation is above the other content*/
+}
+
+/* Styles the user list and typing area within the side panel. */
+#userList, #typingArea {
+  margin-bottom: 10px;
+}
+
+/* Styles the footer with a background color, text alignment, padding, and color. */
+footer{
+  position: relative;
+  background-color: transparent;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}

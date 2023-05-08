@@ -1,0 +1,167 @@
+/* I set the background as a picture and make it cover all the window. */
+body {
+  background-image: url('https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* This function set the style of the navigation an
+set the background color to the RGBA value
+with the specified transparency 
+so that it occupies the entire page width */
+nav {
+  background-color: rgba(3, 32, 44, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Set a unordered list and maki it in the right of the window */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Set the margin of the navigation,
+0 express the the distance between the top and the bottom is 0
+and 10px express the distance between the left and right is 10px */
+nav ul li {
+  margin: 0 10px;
+}
+
+/* Set the text color of the links in each list item in the navigation bar 
+to white, remove the underline of the links,
+set the font size to 20px, 
+set the margins of the links to 10px, 
+add a transition effect for the background color change,
+and set the border radius of the links to 50% to create the round button */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+  transition: background-color 0.5s ease;
+  border-radius: 50%;
+}
+
+/* Set the style of button-about */
+.about-section {
+  margin: 100px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* set the layout of the img-container */
+.img-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin-right: 50px;
+}
+
+/* Sets the positioning width, height, rounded corners
+and border styles for the circular image container */
+.img-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #afcba51e;
+  box-sizing: border-box;
+}
+
+/* Sets the position, width, height, border-radius,
+and object-fit for the image. */
+img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sets the width of the info container to fill the remaining space. */
+.info-container {
+  width: calc(100% - 450px);
+}
+
+ /* Sets the font size, color, font-weight, and margin for the heading. */
+h1 {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+/* Sets the font size, color, font-weight, and margin for the subheading. */
+h2 {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+/* Sets the font size, color, and margin for the paragraphs.*/
+p {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/* Media query applied when the screen width is equal to or less than 768px,
+adjusts the layout of the about section
+to stack the image and info container vertically. */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-container {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .info-container {
+    width: 100%;
+  }
+}
+
+/* Media query applied when the screen width is equal to or less than 480px, 
+further adjusts the font size of the heading, subheading, and paragraphs. */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Sets the background color, text alignment, padding, and color for the footer. */
+footer{
+  background-color: transparent;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
